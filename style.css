@@ -14,7 +14,7 @@ header {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    height: 10vh;
+    height: 8vh;
     width: 100%;
     background-color: #F5F5F6;
 }
@@ -28,7 +28,7 @@ header {
     color: #959BA4;
     display: flex;
     align-items: center;
-    gap: 45px;
+    gap: 3vw;
 }
 
 .log {
@@ -43,7 +43,7 @@ header {
 
 h1 {
     margin-top: 5vw;
-    margin-left: 26vw;
+    margin-left: 24vw;
     font-size: 2.5vw;
 }
 
@@ -54,8 +54,6 @@ h1 {
 
 .currencies {
     display: flex;
-    /* gap: 10px; */
-
 }
 
 .currency {
@@ -67,7 +65,8 @@ h1 {
     height: 3vw;
     border: solid #959BA4 1px;
 }
-.currency:hover{
+
+.currency:hover {
     background-color: #833AE0;
     color: white;
 }
@@ -76,32 +75,82 @@ h1 {
     margin-top: 3vw;
     margin-left: 26vw;
 }
-.currency-value{
+
+.currency-value {
     margin-top: 2vw;
     border: solid #959BA4 1px;
     width: 24vw;
     height: 12vw;
 }
-.entry-value{
-    border: solid #959BA4 1px;
+
+.entry-value {
+    border: solid #959BA4 0.5px;
     margin-left: 1vw;
     width: 18vw;
     margin-top: 2vw;
     font-size: 3vw;
-    /* font-weight: bold; */
+    font-weight: bold;
 }
-.wrapper{
+
+.wrapper {
     display: flex;
 }
-.exit-container{
+
+.exit-container {
     margin-left: 10vw;
     margin-top: 3vw;
 
 }
-.exit-value{
-    border: solid #959BA4 1px;
+
+.exit-value {
+    border: solid #959BA4 0.5px;
     margin-left: 1vw;
     width: 18vw;
     margin-top: 2vw;
     font-size: 3vw;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 300px) and (max-width: 600px) {
+    header {
+        display: none;
+    }
+
+    h1 {
+        display: flex;
+        align-items: center;
+        font-size: 5vw;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10vw;
+    }
+
+    .gray {
+        font-size: 3vw;
+    }
+
+    .currency {
+        width: 8.5vw;
+        height: 6vw;
+        border: solid #959BA4 1px;
+        font-size: 2.5vw;
+    }
+    .currency-value{
+        width: 34vw;
+        height: 22vw;
+    }
+    .entry-container {
+        margin: 0px;
+    }
+
+    .exit-container {
+
+        margin: 0px;
+        margin-top: 8vw;
+    }
+
 }
