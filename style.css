@@ -117,40 +117,57 @@ h1 {
     }
 
     h1 {
+        margin: 0px;
+        margin-top: 5vw;
         display: flex;
-        align-items: center;
-        font-size: 5vw;
+        /* align-items: center; */
+        justify-content: center;
+        font-size: 6vw;
     }
 
     .wrapper {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 10vw;
+        margin-top: 15vw;
     }
 
     .gray {
-        font-size: 3vw;
+        font-size: 4vw;
     }
 
     .currency {
-        width: 8.5vw;
-        height: 6vw;
+        width: 14vw;
+        height: 6.5vw;
         border: solid #959BA4 1px;
-        font-size: 2.5vw;
+        font-size: 2.7vw;
     }
-    .currency-value{
-        width: 34vw;
-        height: 22vw;
+
+    .currency-value {
+        width: 56vw;
+        height: 26vw;
     }
+
     .entry-container {
         margin: 0px;
+    }
+
+    .entry-value {
+        width: 24vw;
+        height: 6vw;
+        font-size: 4.5vw;
     }
 
     .exit-container {
 
         margin: 0px;
         margin-top: 8vw;
+    }
+
+    .exit-value {
+        width: 24vw;
+        height: 6vw;
+        font-size: 4.5vw;
     }
 
 }
