@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 10vh;
+    width: 100%;
+    background-color: #F5F5F6;
+}
+
+.black {
+    color: black;
+}
+
+
+.heading {
+    color: #959BA4;
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+.log {
+    display: inline-block;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6vw;
+    height: 2vw;
+}
+
+h1 {
+    margin-top: 5vw;
+    margin-left: 26vw;
+    font-size: 2.5vw;
+}
+
+.gray {
+    color: #959BA4;
+    margin-bottom: 15px;
+}
+
+.currencies {
+    display: flex;
+    /* gap: 10px; */
+
+}
+
+.currency {
+    color: #959BA4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6vw;
+    height: 3vw;
+    border: solid #959BA4 1px;
+}
+.currency:hover{
+    background-color: #833AE0;
+    color: white;
+}
+
+.entry-container {
+    margin-top: 3vw;
+    margin-left: 26vw;
+}
+.currency-value{
+    margin-top: 2vw;
+    border: solid #959BA4 1px;
+    width: 24vw;
+    height: 12vw;
+}
+.entry-value{
+    border: solid #959BA4 1px;
+    margin-left: 1vw;
+    width: 18vw;
+    margin-top: 2vw;
+    font-size: 3vw;
+    /* font-weight: bold; */
+}
+.wrapper{
+    display: flex;
+}
+.exit-container{
+    margin-left: 10vw;
+    margin-top: 3vw;
+
+}
+.exit-value{
+    border: solid #959BA4 1px;
+    margin-left: 1vw;
+    width: 18vw;
+    margin-top: 2vw;
+    font-size: 3vw;
+}
