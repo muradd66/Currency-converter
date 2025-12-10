@@ -73,7 +73,7 @@ h1 {
 
 .entry-container {
     margin-top: 3vw;
-    margin-left: 26vw;
+    margin-left: 24vw;
 }
 
 .currency-value {
@@ -111,7 +111,7 @@ h1 {
     font-weight: bold;
 }
 
-@media screen and (min-width: 300px) and (max-width: 600px) {
+@media screen and (min-width: 360px) and (max-width: 767px) {
     header {
         display: none;
     }
@@ -129,7 +129,7 @@ h1 {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 15vw;
+        margin-top: 10vw;
     }
 
     .gray {
@@ -138,7 +138,7 @@ h1 {
 
     .currency {
         width: 14vw;
-        height: 6.5vw;
+        height: 5.5vw;
         border: solid #959BA4 1px;
         font-size: 2.7vw;
     }
@@ -170,4 +170,28 @@ h1 {
         font-size: 4.5vw;
     }
 
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+ 
+    .heading {
+        gap: 1vw;
+    }
+
+    .currency {
+        width: 7vw;
+        height: 4.5vw;
+        border: solid #959BA4 1px;
+        font-size: 2vw;
+    }
+    .currency-value{
+        width: 28vw;
+        height: 16vw;
+    }
+    h1{
+        margin-left: 20vw;
+    }
+    .entry-container{
+        margin-left: 20vw;
+    }
 }
