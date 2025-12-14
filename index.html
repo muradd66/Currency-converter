@@ -22,22 +22,23 @@
         </div>
         <p class="log"> Log In</p>
     </header>
-        <h1>
-            Online Currency Converter
-        </h1>
+    <h1>
+        Online Currency Converter
+    </h1>
     <div class="wrapper">
         <div class="entry-container">
             <p class="gray">
                 Source Currency
             </p>
             <div class="currencies">
-                <p class="currency"> RUB</p>
-                <p class="currency"> USD</p>
-                <p class="currency"> EUR</p>
-                <p class="currency"> GBP</p>
+                <p class="currency entry-rub"> RUB</p>
+                <p class="currency entry-usd"> USD</p>
+                <p class="currency entry-eur"> EUR</p>
+                <p class="currency entry-gbp"> GBP</p>
             </div>
             <div class="currency-value">
                 <input class="entry-value" type="text" placeholder="">
+                <p class="entry-info"> </p>
 
             </div>
         </div>
@@ -46,17 +47,21 @@
                 Target Currency
             </p>
             <div class="currencies">
-                <p class="currency"> RUB</p>
-                <p class="currency"> USD</p>
-                <p class="currency"> EUR</p>
-                <p class="currency"> GBP</p>
+                <p class="currency exit-rub"> RUB</p>
+                <p class="currency exit-usd"> USD</p>
+                <p class="currency exit-eur"> EUR</p>
+                <p class="currency exit-gbp"> GBP</p>
             </div>
             <div class="currency-value">
                 <input class="exit-value" type="text" placeholder="">
+                <p class="exit-info"> </p>
 
             </div>
+            <h1 class="fail"></h1>
+
         </div>
     </div>
+    <script src="./app.js"> </script>
 </body>
 
 </html>

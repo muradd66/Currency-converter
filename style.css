@@ -64,6 +64,7 @@ h1 {
     width: 6vw;
     height: 3vw;
     border: solid #959BA4 1px;
+    /* background-color: white; */
 }
 
 .currency:hover {
@@ -74,6 +75,11 @@ h1 {
 .entry-container {
     margin-top: 3vw;
     margin-left: 24vw;
+}
+
+.selected {
+    background-color: #833AE0;
+    color: white;
 }
 
 .currency-value {
@@ -109,6 +115,27 @@ h1 {
     margin-top: 2vw;
     font-size: 3vw;
     font-weight: bold;
+}
+
+.entry-info {
+    font-size: 1.5vw;
+    margin-left: 1vw;
+    margin-top: 3vw;
+    color: #959BA4;
+}
+
+.exit-info {
+    font-size: 1.5vw;
+    margin-left: 1vw;
+    margin-top: 3vw;
+    color: #959BA4;
+}
+
+.fail{
+ 
+    color: red;
+    margin-top: 5vw;
+    margin-left: -10vw;
 }
 
 @media screen and (min-width: 360px) and (max-width: 767px) {
@@ -158,8 +185,9 @@ h1 {
         font-size: 4.5vw;
     }
 
-    .exit-container {
 
+
+    .exit-container {
         margin: 0px;
         margin-top: 8vw;
     }
@@ -173,7 +201,7 @@ h1 {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
- 
+
     .heading {
         gap: 1vw;
     }
@@ -184,14 +212,17 @@ h1 {
         border: solid #959BA4 1px;
         font-size: 2vw;
     }
-    .currency-value{
+
+    .currency-value {
         width: 28vw;
         height: 16vw;
     }
-    h1{
+
+    h1 {
         margin-left: 20vw;
     }
-    .entry-container{
+
+    .entry-container {
         margin-left: 20vw;
     }
 }
