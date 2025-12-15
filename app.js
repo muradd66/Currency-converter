@@ -19,53 +19,6 @@ exitUsd.classList.add("selected")
 
 console.log(entryInput.value)
 
-// Səhifə açılan anda ilkin göstəriş
-
-function load() {
-    entryCurrency = 'RUB'
-    exitCurrency = "USD"
-    // entryInput.value=5000
-    let amount = 5000
-    fetch(`https://v6.exchangerate-api.com/v6/3222be924e4cc8b08d86317c/pair/${entryCurrency}/${exitCurrency}/${amount}`)
-        .then(response => {
-
-            return response.json()
-
-        })
-        .then(data => {
-            console.log(data)
-
-            entryInput.value = amount
-
-            console.log(data.conversion_result)
-            exitInput.value = data.conversion_result
-
-            let newQuote = data.conversion_rate
-            let exitValue = 1 / newQuote
-            entryInfo.innerHTML = `1 ${entryCurrency} = ${data.conversion_rate.toFixed(5)} ${exitCurrency}`
-            exitInfo.innerHTML = `1 ${exitCurrency} = ${exitValue.toFixed(5)} ${entryCurrency}`
-        })
-        // .Catch metodunu araşdırdım
-        .catch(error => {
-
-            if (error.message === 'Failed to fetch') {
-                fail.innerHTML = `Xeta: Şəbəkə yoxdur`
-            } else {
-                fail.innerHTML = ""
-            }
-        })
-}
-// Səhifə qurulan kimi bu hadisə işə düşür, Araşdırıldı
-document.addEventListener("DOMContentLoaded", () => {
-    activeInput = "entry"
-    load()
-})
-
-// window.addEventListener('online', () => {
-//     fail.innerHTML = ""
-//     active()
-// })
-
 function convert() {
 
     fail.innerHTML = ""
@@ -78,7 +31,6 @@ function convert() {
     }
 
     if (entryCurrency == exitCurrency) {
-        // toFixed(5) 5 reqemli edede qeder yuvarlaqlaşdırır Number to String
         exitInput.value = Number(amount).toFixed(5)
         entryInfo.innerHTML = `1 ${entryCurrency} = 1.00000 ${exitCurrency}`
         exitInfo.innerHTML = `1 ${exitCurrency} = 1.00000 ${entryCurrency} `
@@ -115,7 +67,6 @@ entryInput.addEventListener("input", () => {
     value = value.replace(",", ".")
     let parts = value.split('.')
 
-    // Slice metodu (Kəsmə) verdiyimiz indekslere uyqun kəsir
     if (parts.length > 1) {
         if (parts[1].length > 5) {
             parts[1] = parts[1].slice(0, 5)
