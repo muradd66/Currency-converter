@@ -26,13 +26,15 @@ function load() {
     exitCurrency = "USD"
     // entryInput.value=5000
     let amount = 5000
-    fetch(`https://v6.exchangerate-api.com/v6/af270181aad7bb59239013c2/pair/${entryCurrency}/${exitCurrency}/${amount}`)
+    fetch(`https://v6.exchangerate-api.com/v6/3222be924e4cc8b08d86317c/pair/${entryCurrency}/${exitCurrency}/${amount}`)
         .then(response => {
 
             return response.json()
 
         })
         .then(data => {
+            console.log(data)
+
             entryInput.value = amount
 
             console.log(data.conversion_result)
@@ -82,7 +84,7 @@ function convert() {
     else {
 
 
-        fetch(`https://v6.exchangerate-api.com/v6/af270181aad7bb59239013c2/pair/${entryCurrency}/${exitCurrency}/${amount}`)
+        fetch(`https://v6.exchangerate-api.com/v6/3222be924e4cc8b08d86317c/pair/${entryCurrency}/${exitCurrency}/${amount}`)
             .then(response => {
                 return response.json()
             })
@@ -145,7 +147,7 @@ function reverseConvert() {
     else {
 
 
-        fetch(`https://v6.exchangerate-api.com/v6/af270181aad7bb59239013c2/pair/${exitCurrency}/${entryCurrency}/${amount}`)
+        fetch(`https://v6.exchangerate-api.com/v6/3222be924e4cc8b08d86317c/pair/${exitCurrency}/${entryCurrency}/${amount}`)
             .then(response => {
                 return response.json()
             })
