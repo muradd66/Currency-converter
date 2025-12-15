@@ -169,6 +169,7 @@ function reverseConvert() {
 
     }
 }
+
 exitInput.addEventListener("input", () => {
 
     let value = exitInput.value
