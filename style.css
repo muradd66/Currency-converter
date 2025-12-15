@@ -131,8 +131,8 @@ h1 {
     color: #959BA4;
 }
 
-.fail{
- 
+.fail {
+
     color: red;
     margin-top: 5vw;
     margin-left: -10vw;
@@ -167,7 +167,7 @@ h1 {
         width: 14vw;
         height: 5.5vw;
         border: solid #959BA4 1px;
-        font-size: 2.7vw;
+        font-size: 3vw;
     }
 
     .currency-value {
@@ -198,6 +198,15 @@ h1 {
         font-size: 4.5vw;
     }
 
+    .entry-info {
+        margin-top: 10vw;
+        font-size: 3vw;
+    }
+
+    .exit-info {
+        margin-top: 10vw;
+        font-size: 3vw;
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -210,7 +219,7 @@ h1 {
         width: 7vw;
         height: 4.5vw;
         border: solid #959BA4 1px;
-        font-size: 2vw;
+        font-size: 1.8vw;
     }
 
     .currency-value {
@@ -224,5 +233,15 @@ h1 {
 
     .entry-container {
         margin-left: 20vw;
+    }
+
+    .entry-info {
+        margin-top: 6vw;
+        font-size: 2vw;
+    }
+
+    .exit-info {
+        margin-top: 6vw;
+        font-size: 2vw;
     }
 }

@@ -19,8 +19,13 @@ exitUsd.classList.add("selected")
 
 console.log(entryInput.value)
 
+// Səhifə açılan anda ilkin göstəriş
 
 function load() {
+    entryCurrency = 'RUB'
+    exitCurrency = "USD"
+    // entryInput.value=5000
+    let amount = 5000
     fetch(`https://v6.exchangerate-api.com/v6/af270181aad7bb59239013c2/pair/${entryCurrency}/${exitCurrency}/${amount}`)
         .then(response => {
 
@@ -28,12 +33,31 @@ function load() {
 
         })
         .then(data => {
+            entryInput.value = amount
 
+            console.log(data.conversion_result)
+            exitInput.value = data.conversion_result
 
+            let newQuote = data.conversion_rate
+            let exitValue = 1 / newQuote
+            entryInfo.innerHTML = `1 ${entryCurrency} = ${data.conversion_rate.toFixed(5)} ${exitCurrency}`
+            exitInfo.innerHTML = `1 ${exitCurrency} = ${exitValue.toFixed(5)} ${entryCurrency}`
+        })
+        // .Catch metodunu araşdırdım
+        .catch(error => {
+
+            if (error.message === 'Failed to fetch') {
+                fail.innerHTML = `Xeta: Şəbəkə yoxdur`
+            } else {
+                fail.innerHTML = ""
+            }
         })
 }
-
-
+// Səhifə qurulan kimi bu hadisə işə düşür, Araşdırıldı
+document.addEventListener("DOMContentLoaded", () => {
+    activeInput = "entry"
+    load()
+})
 
 
 
@@ -49,6 +73,7 @@ function convert() {
     }
 
     if (entryCurrency == exitCurrency) {
+        // toFixed(5) 5 reqemli edede qeder yuvarlaqlaşdırır Number to String
         exitInput.value = Number(amount).toFixed(5)
         entryInfo.innerHTML = `1 ${entryCurrency} = 1.00000 ${exitCurrency}`
         exitInfo.innerHTML = `1 ${exitCurrency} = 1.00000 ${entryCurrency} `
@@ -59,14 +84,9 @@ function convert() {
 
         fetch(`https://v6.exchangerate-api.com/v6/af270181aad7bb59239013c2/pair/${entryCurrency}/${exitCurrency}/${amount}`)
             .then(response => {
-                // if (response.ok == false) {
-                //     error.innerHTML = `Xəta: ${response.status}`
-                // }
                 return response.json()
-
             })
             .then(data => {
-                // entryInput.value=Number(entryInput.value).toFixed(5)
                 exitInput.value = Number(data.conversion_result.toFixed(5))
                 entryInput.value = amount
                 let newQuote = data.conversion_rate
@@ -75,17 +95,13 @@ function convert() {
                 exitInfo.innerHTML = `1 ${exitCurrency} = ${exitValue.toFixed(5)} ${entryCurrency}`
             })
             .catch(error => {
-
                 if (error.message === 'Failed to fetch') {
-
                     fail.innerHTML = `Xeta: Şəbəkə yoxdur`
                 } else {
                     fail.innerHTML = ""
                 }
             })
-
     }
-
 
 }
 entryInput.addEventListener("input", () => {
@@ -94,6 +110,7 @@ entryInput.addEventListener("input", () => {
     value = value.replace(",", ".")
     let parts = value.split('.')
 
+    // Slice metodu (Kəsmə) verdiyimiz indekslere uyqun kəsir
     if (parts.length > 1) {
         if (parts[1].length > 5) {
             parts[1] = parts[1].slice(0, 5)
@@ -106,7 +123,6 @@ entryInput.addEventListener("input", () => {
     convert();
 
 })
-
 
 
 function reverseConvert() {
@@ -131,9 +147,6 @@ function reverseConvert() {
 
         fetch(`https://v6.exchangerate-api.com/v6/af270181aad7bb59239013c2/pair/${exitCurrency}/${entryCurrency}/${amount}`)
             .then(response => {
-                if (response.ok != true) {
-                    error.innerHTML = `Xəta: ${response.status}`
-                }
                 return response.json()
             })
             .then(data => {
@@ -145,15 +158,12 @@ function reverseConvert() {
                 exitInfo.innerHTML = `1 ${exitCurrency} = ${data.conversion_rate.toFixed(5)} ${entryCurrency}`
             })
             .catch(error => {
-
                 if (error.message === 'Failed to fetch') {
-
                     fail.innerHTML = `Xeta: Şəbəkə yoxdur`
                 } else {
                     fail.innerHTML = ""
                 }
             })
-
 
     }
 }
