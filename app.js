@@ -1,11 +1,11 @@
 let entryRub = document.querySelector(".entry-rub")
 let entryUsd = document.querySelector(".entry-usd")
 let entryEur = document.querySelector(".entry-eur")
-let entryGbp = document.querySelector(".entry-gbp")
+let entryAzn = document.querySelector(".entry-azn")
 let exitRub = document.querySelector(".exit-rub")
 let exitUsd = document.querySelector(".exit-usd")
 let exitEur = document.querySelector(".exit-eur")
-let exitGbp = document.querySelector(".exit-gbp")
+let exitAzn = document.querySelector(".exit-azn")
 let entryInput = document.querySelector(".entry-value")
 let exitInput = document.querySelector(".exit-value")
 let entryInfo = document.querySelector(".entry-info")
@@ -61,7 +61,10 @@ document.addEventListener("DOMContentLoaded", () => {
     load()
 })
 
-
+// window.addEventListener('online', () => {
+//     fail.innerHTML = ""
+//     active()
+// })
 
 function convert() {
 
@@ -199,15 +202,13 @@ function active() {
     }
 }
 
-
-
 //Giriş dəyərlər
 
 entryRub.addEventListener("click", () => {
 
     entryUsd.classList.remove("selected")
     entryEur.classList.remove("selected")
-    entryGbp.classList.remove("selected")
+    entryAzn.classList.remove("selected")
     entryRub.classList.add("selected")
     entryCurrency = "RUB"
     active()
@@ -217,7 +218,7 @@ entryUsd.addEventListener("click", () => {
 
     entryRub.classList.remove("selected")
     entryEur.classList.remove("selected")
-    entryGbp.classList.remove("selected")
+    entryAzn.classList.remove("selected")
     entryUsd.classList.add("selected")
     entryCurrency = "USD"
     active()
@@ -227,20 +228,20 @@ entryUsd.addEventListener("click", () => {
 entryEur.addEventListener("click", () => {
 
     entryRub.classList.remove("selected")
-    entryGbp.classList.remove("selected")
+    entryAzn.classList.remove("selected")
     entryUsd.classList.remove("selected")
     entryEur.classList.add("selected")
     entryCurrency = "EUR"
     active()
 
 })
-entryGbp.addEventListener("click", () => {
+entryAzn.addEventListener("click", () => {
 
     entryRub.classList.remove("selected")
     entryUsd.classList.remove("selected")
     entryEur.classList.remove("selected")
-    entryGbp.classList.add("selected")
-    entryCurrency = "GBP"
+    entryAzn.classList.add("selected")
+    entryCurrency = "AZN"
     active()
 })
 
@@ -254,7 +255,7 @@ exitRub.addEventListener("click", () => {
 
     exitUsd.classList.remove("selected")
     exitEur.classList.remove("selected")
-    exitGbp.classList.remove("selected")
+    exitAzn.classList.remove("selected")
     exitRub.classList.add("selected")
     exitCurrency = "RUB"
     active()
@@ -264,7 +265,7 @@ exitRub.addEventListener("click", () => {
 exitUsd.addEventListener("click", () => {
 
     exitEur.classList.remove("selected")
-    exitGbp.classList.remove("selected")
+    exitAzn.classList.remove("selected")
     exitRub.classList.remove("selected")
     exitUsd.classList.add("selected")
     exitCurrency = "USD"
@@ -275,7 +276,7 @@ exitUsd.addEventListener("click", () => {
 
 exitEur.addEventListener("click", () => {
 
-    exitGbp.classList.remove("selected")
+    exitAzn.classList.remove("selected")
     exitRub.classList.remove("selected")
     exitUsd.classList.remove("selected")
     exitEur.classList.add("selected")
@@ -284,13 +285,13 @@ exitEur.addEventListener("click", () => {
 })
 
 
-exitGbp.addEventListener("click", () => {
+exitAzn.addEventListener("click", () => {
 
     exitRub.classList.remove("selected")
     exitUsd.classList.remove("selected")
     exitEur.classList.remove("selected")
-    exitGbp.classList.add("selected")
-    exitCurrency = "GBP"
+    exitAzn.classList.add("selected")
+    exitCurrency = "AZN"
     active()
 })
 
